@@ -8,14 +8,14 @@ const app = express();
 const cors = require('cors');
 
 app.use(cors());
-const port = 5000;
+const port = 4000;
 
 
 app.use(bodyParser.json());
 mongoose.set("strictQuery",true)
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://Nripesh:Nripesh%401@cluster0.qwamlue.mongodb.net/TaskManagementData', {
+mongoose.connect('mongodb+srv://premesh:12345@cluster0.tbhbjbt.mongodb.net/myDatabase', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -23,7 +23,7 @@ mongoose.connect('mongodb+srv://Nripesh:Nripesh%401@cluster0.qwamlue.mongodb.net
 .catch(err => console.log('MongoDB connection error:', err));
 
 // Routes
-app.use('/tasks', ListR); // Use /tasks instead of /task for consistency
+app.use('/tasks', ListR); // Use /tasks  (http://localhost:4000/tasks/)
 
 // Start the server
 app.listen(port, () => {
